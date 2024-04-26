@@ -1,0 +1,9 @@
+.navigation-container ul {
+  list-style-type: none;
+  display: flex;
+  gap: 12px;
+}
+
+.active-link {
+  color: red;
+}
