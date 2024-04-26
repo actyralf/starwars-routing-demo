@@ -6,6 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import CharactersPage from "./pages/CharactersPage";
 import CharactersDetailPage from "./pages/CharactersDetailPage";
 import RootLayout from "./pages/RootLayout";
+import ContactLayout from "./pages/ContactLayout";
 import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
@@ -25,8 +26,14 @@ const router = createBrowserRouter([
         path: "characters/:characterId",
         element: <CharactersDetailPage />,
       },
+    ],
+  },
+  {
+    path: "contact",
+    element: <ContactLayout />,
+    children: [
       {
-        path: "contact",
+        index: true,
         element: <ContactPage />,
       },
     ],
