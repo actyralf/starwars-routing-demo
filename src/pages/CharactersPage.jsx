@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const apiPath = "https://swapi.py4e.com/api/people";
 
@@ -22,6 +23,9 @@ export default function CharactersPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Characters - Starwars</title>
+      </Helmet>
       <h1>Characters Page</h1>
       <ul>
         {characters.map((character) => {

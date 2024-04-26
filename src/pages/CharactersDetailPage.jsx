@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const apiPath = "https://swapi.py4e.com/api/people";
 
@@ -20,6 +21,11 @@ export default function CharactersDetailPage() {
   }, [characterId]);
   return (
     <>
+      <Helmet>
+        <title>
+          {character ? character.name : "Character Details - Starwars"}
+        </title>
+      </Helmet>
       <h1>Characters Detail Page</h1>
       <h2>Details for Character: {characterId}</h2>
       {character && (
